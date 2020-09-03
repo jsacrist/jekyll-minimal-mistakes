@@ -4,8 +4,8 @@ DCK_IMG = jsacrist/jekyll/minimal-mistakes
 .PHONY: executable clean build-base build all
 
 executable:
-	find . -iname "*.sh" -exec sed -i $$'s/\r$$//' {} \;
-	find . -iname "*.sh" -exec chmod +x {} \;
+	find . -iname "*.sh" -type f -exec sed -i 's/\r//' {} \;
+	find . -iname "*.sh" -type f -exec chmod +x {} \;
 
 clean:
 	rm -rf "./minimal-mistakes/"
